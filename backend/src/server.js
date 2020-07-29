@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 const routes = require('./routes');
 
 const app = express();
@@ -9,6 +11,7 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0.1pvgd.mongodb.net/s
     useUnifiedTopology: true,
 });
 
+app.use(cors()); // aqui vai restringir o acesso de quem pode acessar a api, aqui no caso nao tem nada restrito
 app.use(express.json());
 app.use(routes);
 

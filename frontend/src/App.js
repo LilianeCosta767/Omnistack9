@@ -7,10 +7,14 @@ import logo from './assets/logo.svg';
 function App() {
   const [email, setEmail] = useState(''); // o campo email vai receber o que tá em useState('') em tempo real, setEmail serve para atualizar o valor da variavel email
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    console.log(email);
+    const response = await api.post('/sessions', { email: email });
+
+    const { _id } = response.data;
+
+    console.log(_id);
   }
 
   return (
