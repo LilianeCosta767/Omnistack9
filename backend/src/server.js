@@ -6,6 +6,12 @@ const routes = require('./routes');
 
 const app = express();
 
+/*
+app.use((req, res, next) => {
+    console.log("Acessou o Middleware");
+});
+*/
+
 mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0.1pvgd.mongodb.net/semana09?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
