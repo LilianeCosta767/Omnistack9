@@ -13,3 +13,11 @@ label#thumbnail {
 label#thumbnail input {
     display: none;
 }
+
+label#thumbnail.has-thumbnail {
+    border: 0; /* tira a borda da imagem quando for dado um preview */
+}
+
+label#thumbnail.has-thumbnail img {
+    display: none; /* tira o icone da camera quando for dado um preview */
+}
